@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloSignalRWorld.Server", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloSignalRWorld.Client.WPF", "HelloSignalRWorld.Client.WPF\HelloSignalRWorld.Client.WPF.csproj", "{1103D066-5271-4F32-8956-D579C5361A3D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloSignalRWorld.Utils.SignalR", "HelloSignalRWorld.Utils.SignalR\HelloSignalRWorld.Utils.SignalR.csproj", "{E9A69DA4-B684-4D3F-B388-BADF4C69ED75}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1103D066-5271-4F32-8956-D579C5361A3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1103D066-5271-4F32-8956-D579C5361A3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1103D066-5271-4F32-8956-D579C5361A3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9A69DA4-B684-4D3F-B388-BADF4C69ED75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9A69DA4-B684-4D3F-B388-BADF4C69ED75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9A69DA4-B684-4D3F-B388-BADF4C69ED75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9A69DA4-B684-4D3F-B388-BADF4C69ED75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
