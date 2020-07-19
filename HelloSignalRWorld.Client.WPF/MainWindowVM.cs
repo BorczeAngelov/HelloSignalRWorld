@@ -10,7 +10,7 @@ namespace HelloSignalRWorld.Client.WPF
     {
         private bool _isConnected;
         private bool _isTextBoxLocked;
-        private string _textBoxGlobalTextValue = "Hello SignalR World";
+        private string _textBoxGlobalTextValue;
         private readonly TextBoxHubClient _textBoxHubClient;
 
         public MainWindowVM()
