@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="3.1.6" />
-    <PackageReference Include="Microsoft.VisualStudio.Utilities" Version="16.6.30107.105" />
   </ItemGroup>
 
   <ItemGroup>

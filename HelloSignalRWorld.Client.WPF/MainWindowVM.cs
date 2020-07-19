@@ -1,5 +1,5 @@
 ﻿using HelloSignalRWorld.Client.WPF.HubClients;
-using Microsoft.VisualStudio.PlatformUI;
+using HelloSignalRWorld.Client.WPF.Utils;
 using System;
 using System.ComponentModel;
 using System.Windows;
@@ -81,6 +81,7 @@ namespace HelloSignalRWorld.Client.WPF
                 await _textBoxHubClient.ConnectWithServerHub();
                 IsConnected = true;
                 ConnectCommand.RaiseCanExecuteChanged();
+                ReleaseLockCommand.RaiseCanExecuteChanged();
             }
             catch (Exception ex)
             {

@@ -21,52 +21,45 @@
                        VerticalAlignment="Center"
                        Margin="5,0,0,0" />
 
-            <TextBox Text="{Binding TextBoxGlobalTextValue, UpdateSourceTrigger=PropertyChanged}"
-                     VerticalAlignment="Center"
-                     Margin="5"
-                     Grid.Column="1">
-                <TextBox.Style>
-                    <Style TargetType="TextBox">
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding IsConnected}"
-                                         Value="True">
-                                <Setter Property="IsEnabled"
-                                        Value="True" />
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding IsConnected}"
-                                         Value="False">
-                                <Setter Property="IsEnabled"
-                                        Value="False" />
-                            </DataTrigger>
+            <Border IsEnabled="{Binding IsConnected}"
+                    VerticalAlignment="Center"
+                    Margin="5"
+                    Grid.Column="1">
 
-                            <DataTrigger Binding="{Binding IsTextBoxLocked}"
-                                         Value="True">
-                                <Setter Property="IsEnabled"
-                                        Value="False" />
-                                <Setter Property="Background"
-                                        Value="Gray" />
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding IsTextBoxLocked}"
-                                         Value="False">
-                                <Setter Property="IsEnabled"
-                                        Value="True" />
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </TextBox.Style>
-            </TextBox>
+                <TextBox Text="{Binding TextBoxGlobalTextValue, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Style.Triggers>
+
+                                <DataTrigger Binding="{Binding IsTextBoxLocked}"
+                                             Value="True">
+                                    <Setter Property="IsEnabled"
+                                            Value="False" />
+                                    <Setter Property="Background"
+                                            Value="Gray" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsTextBoxLocked}"
+                                             Value="False">
+                                    <Setter Property="IsEnabled"
+                                            Value="True" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+            </Border>
 
             <Button Content="Release Lock"
                     Command="{Binding ReleaseLockCommand}"
                     Grid.Column="2"
                     VerticalAlignment="Center"
                     Margin="5" />
-            
+
             <Button Content="Connect"
                     Command="{Binding ConnectCommand}"
                     Grid.Column="3"
-                    VerticalAlignment="Center" 
-                    Margin="5"/>
+                    VerticalAlignment="Center"
+                    Margin="5" />
         </Grid>
     </Grid>
 </Window>
