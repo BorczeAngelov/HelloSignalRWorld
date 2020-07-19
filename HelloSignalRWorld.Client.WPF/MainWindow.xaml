@@ -5,11 +5,68 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloSignalRWorld.Client.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Hello SignalR World"
+        Height="150"
+        Width="800">
     <Grid>
-        <Button Command="{Binding ConnectCommand}"
-                Content="Connect"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Global Text:"
+                       VerticalAlignment="Center"
+                       Margin="5,0,0,0" />
+
+            <TextBox Text="{Binding TextBoxGlobalTextValue, UpdateSourceTrigger=PropertyChanged}"
+                     VerticalAlignment="Center"
+                     Margin="5"
+                     Grid.Column="1">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsConnected}"
+                                         Value="True">
+                                <Setter Property="IsEnabled"
+                                        Value="True" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsConnected}"
+                                         Value="False">
+                                <Setter Property="IsEnabled"
+                                        Value="False" />
+                            </DataTrigger>
+
+                            <DataTrigger Binding="{Binding IsTextBoxLocked}"
+                                         Value="True">
+                                <Setter Property="IsEnabled"
+                                        Value="False" />
+                                <Setter Property="Background"
+                                        Value="Gray" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsTextBoxLocked}"
+                                         Value="False">
+                                <Setter Property="IsEnabled"
+                                        Value="True" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+
+            <Button Content="Release Lock"
+                    Command="{Binding ReleaseLockCommand}"
+                    Grid.Column="2"
+                    VerticalAlignment="Center"
+                    Margin="5" />
+            
+            <Button Content="Connect"
+                    Command="{Binding ConnectCommand}"
+                    Grid.Column="3"
+                    VerticalAlignment="Center" 
+                    Margin="5"/>
+        </Grid>
     </Grid>
 </Window>
